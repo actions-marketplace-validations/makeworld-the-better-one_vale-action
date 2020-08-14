@@ -1,6 +1,7 @@
 # GitHub Actions + Vale
 
-> :octocat: The official GitHub Action for Vale -- install, manage, and run Vale with ease.
+**An unofficial fork of the Github Action for Vale, to update to Vale v2.3.x.**
+
 
 <p align="center">
   <img width="50%" alt="A demo screenshot." src="https://user-images.githubusercontent.com/8785025/85236358-272d3680-b3d2-11ea-8793-0f45cb70189a.png">
@@ -8,7 +9,7 @@
 
 ## Usage
 
-Add the following (or similar) to one of your [`.github/workflow`](https://help.github.com/en/github/automating-your-workflow-with-github-actions/configuring-a-workflow) files:
+Add the following (or similar) to one of your [`.github/workflows`](https://help.github.com/en/github/automating-your-workflow-with-github-actions/configuring-a-workflow) files:
 
 ```yaml
 name: Linting
@@ -22,7 +23,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Vale
-      uses: errata-ai/vale-action@v1.2.0
+      uses: makeworld-the-better-one/vale-action@v1.3.0
       with:
         # Optional
         styles: |

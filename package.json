@@ -1,7 +1,7 @@
 {
-  "name": "vale-action",
+  "name": "vale-action-2.3",
   "version": "1.0.4",
-  "description": "The official GitHub Action for Vale -- install, manage, and run Vale with ease.",
+  "description": "The (un)official GitHub Action for Vale -- forked to update to Vale v2.3.x",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/errata-ai/vale-action.git"
+    "url": "git+https://github.com/makeworld-the-better-one/vale-action.git"
   },
   "keywords": [
     "actions",
@@ -19,12 +19,12 @@
     "toolkit",
     "setup"
   ],
-  "author": "jdkato",
+  "author": "makeworld-the-better-one",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/errata-ai/vale-action/issues"
+    "url": "https://github.com/makeworld-the-better-one/vale-action/issues"
   },
-  "homepage": "https://github.com/errata-ai/vale-action",
+  "homepage": "https://github.com/makeworld-the-better-one/vale-action",
   "dependencies": {
     "@actions/core": "^1.0.0",
     "@actions/exec": "^1.0.0",

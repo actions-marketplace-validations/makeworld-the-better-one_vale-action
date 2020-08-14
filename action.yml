@@ -1,6 +1,6 @@
-name: Vale Linter
-description: The official GitHub Action for Vale -- install, manage, and run Vale with ease.
-author: jdkato
+name: Vale Linter Update
+description: The (un)official GitHub Action for Vale -- forked to update to Vale v2.3.x
+author: makeworld-the-better-one
 branding:
   icon: check
   color: green

@@ -2,9 +2,6 @@
 
 **An unofficial fork of the Github Action for Vale, to update to Vale v2.3.x.**
 
-**Currently custom styles do not download automatically.** You will have to put them in your style folder on your own. See [this issue](https://github.com/errata-ai/vale-action/issues/20) for updates.
-
-
 <p align="center">
   <img width="50%" alt="A demo screenshot." src="https://user-images.githubusercontent.com/8785025/85236358-272d3680-b3d2-11ea-8793-0f45cb70189a.png">
 </p>
@@ -24,15 +21,20 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
+    # Optional
+    # Repeat the wget and unzip steps for each style you want to install
+    # Replace STYLES_PATH_REPLACE_ME with the StylesPath specified in your vale config.
+    - name: Styles
+      run: |
+        sudo apt install wget unzip
+        wget https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
+        unzip Microsoft.zip -d STYLES_PATH_REPLACE_ME
+        wget https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
+        unzip write-good.zip -d STYLES_PATH_REPLACE_ME
+
     - name: Vale
       uses: makeworld-the-better-one/vale-action@v1.3.0
       with:
-        # STYLES DOWNLOADING DOES NOT WORK RIGHT NOW
-        # SEE: https://github.com/errata-ai/vale-action/issues/20
-        styles: |
-          https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
-          https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
-
         # Optional
         config: https://raw.githubusercontent.com/errata-ai/vale/master/.vale.ini
 
@@ -70,21 +72,6 @@ BasedOnStyles = Vale
 ## Inputs
 
 You can further customize the linting processing by providing one of the following optional inputs.
-
-### `styles`
-
-**Currently custom styles do not download automatically.** You will have to put them in your style folder on your own. See [this issue](https://github.com/errata-ai/vale-action/issues/20) for updates.
-
-`styles` is a space-delimited list of external styles to install into your repository's local `StylesPath`. Each link needs to point to a single `.zip` file containing the style:
-
-```yaml
-with:
-  styles: |
-    https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
-    https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
-```
-
-See [errata-ai/styles](https://github.com/errata-ai/styles) for more information.
 
 ### `config`
 
